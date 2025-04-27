@@ -1,0 +1,32 @@
+{
+    "name": "tailpress/cli",
+    "description": "The TailPress command line interface",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TailPress\\Cli\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/tailpress-cli"
+    ],
+    "authors": [
+        {
+            "name": "Jeffrey van Rossum",
+            "email": "jeffrey@vanrossum.dev"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/console": "^6.0|^7.0",
+        "tailpress/framework": "dev-main",
+        "symfony/filesystem": "^7.2"
+    },
+    "extra": {
+        "tailpress": {
+            "providers": [
+                "TailPress\\Cli\\CliServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+if(file_exists(__DIR__.'/../vendor/autoload.php')) {
+    require_once __DIR__.'/../vendor/autoload.php';
+} else {
+    fwrite(STDERR, "Error: Composer autoload file not found. Please run 'composer install'." . PHP_EOL);
+    exit(1);
+}
+
+$wpLoadPath = getcwd() . '/../../../wp-load.php';
+
+if (!file_exists($wpLoadPath)) {
+    fwrite(STDERR, "Error: wp-load.php file not found at expected path: $wpLoadPath" . PHP_EOL);
+    exit(1);
+}
+
+require_once $wpLoadPath;
+
+$tailpress = TailPress\Framework\Theme::instance();
+
+if(wp_get_environment_type() !== 'development') {
+    exit('This script can only be run when `WP_ENVIRONMENT_TYPE` is set to development.' . PHP_EOL);
+}
+
+$app = new Application('TailPress CLI', '5.0.0');
+
+$app->addCommands($tailpress->commands()->all());
+
+$app->run();
