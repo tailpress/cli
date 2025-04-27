@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7d76110c0636b2e3f133e44e378f623",
+    "content-hash": "26d3aab328fb7d7a2ffe3866c440e461",
     "packages": [
         {
             "name": "psr/container",
@@ -775,11 +775,17 @@
         },
         {
             "name": "tailpress/framework",
-            "version": "dev-main",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tailpress/framework.git",
+                "reference": "d3ac07b3f953efbe48a25108eab13112f83123e9"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/jeffreyvanrossum/code/tailpress/framework",
-                "reference": "6622f13aa7538be593c33e1c236f90cc9a287232"
+                "type": "zip",
+                "url": "https://api.github.com/repos/tailpress/framework/zipball/d3ac07b3f953efbe48a25108eab13112f83123e9",
+                "reference": "d3ac07b3f953efbe48a25108eab13112f83123e9",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.0.2",
@@ -791,13 +797,14 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "TailPress\\Framework\\": "src/"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "TailPress\\Framework\\": "src/"
+                }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -808,17 +815,17 @@
                 }
             ],
             "description": "The framework package for TailPress.",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/tailpress/framework/issues",
+                "source": "https://github.com/tailpress/framework/tree/5.0.0"
+            },
+            "time": "2025-04-27T15:49:57+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "tailpress/framework": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
